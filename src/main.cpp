@@ -19,8 +19,8 @@ void callback(const yolov3_trt_ros::BoundingBoxes& msg) {
   }
 }
 
-void drive_normal(std::string direction, float time, PID& pid);
-std::pair<int,int> yourFunction();
+void drive_normal(std::string& direction, float time, PID& pid);
+std::pair<int, int> yourFunction();
 void find_traffic_light();
 void find_u_turn();
 void find_cross_walk();
@@ -38,9 +38,6 @@ int main(int argc, char** argv) {
 
   while (ros::ok()) {
     ros::spinOnce();
-    if (frame.cols != 640) {
-      continue;
-    }
 
     // Start Drive
     // Left
